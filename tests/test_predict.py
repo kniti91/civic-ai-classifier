@@ -2,8 +2,9 @@ from civic_classifier.predict import predict_image
 import os
 
 def test_prediction_runs():
-    image_path = "examples/pothole_1.jpg"
+    image_path = "examples/000217.jpg"
     assert os.path.exists(image_path)
     label, confidence = predict_image(image_path)
+    print("LABEL:", label, "CONF:", confidence)  # <-- add this
     assert isinstance(label, str)
     assert 0.0 <= confidence <= 1.0
